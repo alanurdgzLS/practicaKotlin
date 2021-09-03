@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         this.appleList = arrayOf<apple>()
     }
 
-    fun createNew(view: View) {
+    fun new(view: View) {
         var randomNumber = (0..150).random()
         var a: apple
         when(randomNumber) {
@@ -40,13 +40,13 @@ class MainActivity : AppCompatActivity() {
             indexList = indexList!! +1
         }
 
-        showMessage("Ahora jugaras videojuegos en: ${a.nombre}")
+        showMessage("El nombre del dispositivo es: ${a.nombre}")
         txvInfo.text = "Nombre: ${a.nombre}\n" +
                        "Categoria: ${a.categoria}\n" +
                        "Precio: $${a.precio}"
     }
 
-    fun goBack(view: View){
+    fun back(view: View){
         if ( indexList == 0 ) {
             if ( appleList.size != 1 ) {
                 indexList = appleList.size - 1
@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
                        "Precio: $${appleList[indexList!!].precio}"
     }
 
-    fun goForward(view: View){
+    fun next(view: View){
         if ( indexList == (appleList.size-1) ) {
             indexList = 0
         } else {
@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
                        "Precio: $${appleList[indexList!!].precio}"
     }
 
-    fun showDevice(view: View){
+    fun mensaje2(view: View){
         var randomNumber = (0..2).random()
         when(randomNumber) {
             0 -> showMessage("Tú ${appleList[indexList!!].nombre} no funciona")
@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun checkDevice(view: View){
+    fun mensaje3(view: View){
         var randomNumber = (0..2).random()
         when(randomNumber) {
             0 -> showMessage("Estás viendo Facebook en ${appleList[indexList!!].nombre}")
@@ -90,7 +90,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun review(view: View){
+    fun mensaje1(view: View){
         var randomNumber = (0..2).random()
         when(randomNumber) {
             0 -> showMessage("Mi ${appleList[indexList!!].nombre} ya no sirve")
